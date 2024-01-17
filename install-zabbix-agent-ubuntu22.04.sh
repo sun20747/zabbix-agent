@@ -5,8 +5,8 @@ apt update -y
 
 apt install zabbix-agent2 zabbix-agent2-plugin-*
 
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/# Hostname=/Hostname='"${host}"'/g' /etc/zabbix/zabbix_agentd.conf
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/zabbix/zabbix_agent*.conf
+sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agent*.conf
+sed -i 's/# Hostname=/Hostname='"${host}"'/g' /etc/zabbix/zabbix_agent*.conf
 systemctl restart zabbix-agent2
 systemctl enable zabbix-agent2
